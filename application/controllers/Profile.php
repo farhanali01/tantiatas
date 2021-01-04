@@ -9,9 +9,6 @@ class Profile extends CI_Controller
       $this->load->model('ModelUsers');
    }
 
-   public function test(){
-      
-   }
 
    public function Profile()
    {
