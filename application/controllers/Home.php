@@ -38,7 +38,8 @@ class Home extends CI_Controller
         $data = array(
             "active_cart" => "active",
             "title" => "home - Keranjang",
-            "data_cart" => $this->ModelCart->getDataCart($id_users)
+            "data_cart" => $this->ModelCart->getDataCart($id_users),
+            'data_detail'   => $this->ModelUsers->getDataProfileSingle($id_users)
         );
         $this->load->view('home/header', $data);
         $this->load->view('home/navbar');
@@ -54,7 +55,8 @@ class Home extends CI_Controller
         $data = array(
             "active_cart" => "active",
             "title" => "home - Keranjang",
-            "data_cart" => $this->ModelCart->getDataCart($id_users)
+            "data_cart" => $this->ModelCart->getDataCart($id_users),
+            
         );
         $this->load->view('home/header', $data);
         $this->load->view('home/navbar');

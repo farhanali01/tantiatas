@@ -29,7 +29,7 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="card-header">Laporan Pemesanan Bulan <?= $bulan ?></h5>
+                            <h5 class="card-header">Laporan Penjualan Bulan <?= $bulan ?></h5>
                         </div>
                         <div class="col-6">
                             <button data-toggle="modal" data-target="#modalCetak" style="float: right;position:relative;right:20px;top:15px;" class="btn btn-outline-info">Pilih Bulan</button>
@@ -63,26 +63,15 @@
                                         <td><?= $i++ ?></td>
                                         <td><?= $row['fullname'] ?></td>
                                         <td><?= $row['nama_produk'] ?></td>
-                                        <td><?= $row['tanggal'] ?></td>
+                                        <td><?= date_format(date_create($row['tanggal_transaksi']),"d F Y") ?></td>
                                         <td><?= $row['alamat'] ?></td>
-                                        <td><?= $row['total_harga'] ?></td>
+                                        <td>Rp <?= number_format($row['total_harga'],0,".",".") ?></td>
 
                                     </tr>
                                 <?php } ?>
                                 </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Pemesan</th>
-                                        <th>Nama Produk</th>
-                                        <th>Tanggal Pesanan</th>
-                                        <th>Alamat</th>
-                                        <th>Total Harga</th>
-
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>

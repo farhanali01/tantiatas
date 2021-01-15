@@ -65,7 +65,7 @@
                                         foreach ($dataProduk as $row) { ?>
                                             <td> <?= $i++ ?></td>
                                             <td><?= $row['nama_produk'] ?></td>
-                                            <td>Rp.<?= number_format($row['harga'], 0, ",", ".") ?></td>
+                                            <td>Rp<?= number_format($row['harga'], 0, ",", ".") ?></td>
                                             <td><?= $row['deskripsi'] ?></td>
                                             <td><?= $row['nama_kategori'] ?></td>
                                             <td>
@@ -91,17 +91,7 @@
                                 </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Produk</th>
-                                        <th>Harga</th>
-                                        <th>Deskripsi</th>
-                                        <th>Nama Kategori</th>
-                                        <th>Foto</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
+                               
                             </table>
                         </div>
                     </div>

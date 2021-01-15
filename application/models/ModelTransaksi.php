@@ -106,17 +106,19 @@ class ModelTransaksi extends CI_Model
                 tbl_card.id_users = tbl_users.id_users AND
                 tbl_card.id_produk = tbl_produk.id_produk AND
                 tbl_detail_user.id_users = tbl_users.id_users AND
-                MONTH(tbl_transaksi.tanggal) = ? AND
-                YEAR(tbl_transaksi.tanggal) = ?
+                MONTH(tbl_transaksi.tanggal_transaksi) = ? AND
+                YEAR(tbl_transaksi.tanggal_transaksi) = ?
                 ";
 
         return $this->db->query($sql,array($bulan,$tahun))->result_array();
     }
 
-    public function getDataPendapata($status)
+    public function getDataPendapatan($status,$date)
     {
-        $sql = "SELECT SUM(total_harga)as total FROM tbl_transaksi WHERE status_transaksi = ?  GROUP BY id_transaksi";
-        return $this->db->query($sql, $status)->row_array();
+        $sql = "SELECT DISTINCT(id_transaksi), SUM(total_harga)as total FROM tbl_transaksi 
+                WHERE status_transaksi = ?  AND
+                MONTH(tanggal_transaksi) = ?";
+        return $this->db->query($sql, array($status,$date))->row_array();
     }
     public function deleteStatus($id_transaksi)
     {

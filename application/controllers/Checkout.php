@@ -39,7 +39,7 @@
                 $dataTransaksi = array([
                     'id_transaksi' => $id_transaksi,
                     'id_card' => $id_card[$key],
-                    'tanggal' => date('y-m-d'),
+                    'tanggal_transaksi' => date('y-m-d'),
                     'total_harga' => $total
                 ]);
                 $this->ModelCheckout->insertTransaksi($dataTransaksi);

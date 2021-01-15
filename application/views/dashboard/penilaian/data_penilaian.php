@@ -66,17 +66,7 @@
                                 </tr>
                                 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID penilaian</th>
-                                        <th>Nama Produk</th>
-                                        <th>Harga</th>
-                                        <th>Berat</th>
-                                        <th>Bahan</th>
-                                        
-
-                                    </tr>
-                                </tfoot>
+                               
                             </table>
                         </div>
                     </div>

@@ -39,8 +39,8 @@
                          <?php foreach ($data_transaksi as $row) { ?>
                              <tr>
                                  <td> <?= $row['id_transaksi'] ?> </td>
-                                 <td> <?= date("d F Y", strtotime($row['tanggal'])) ?></td>
-                                 <td> Rp <?= number_format($row['total_harga']), 0, ",", "." ?></td>
+                                 <td> <?= date("d F Y", strtotime($row['tanggal_transaksi'])) ?></td>
+                                 <td> Rp <?= number_format($row['total_harga']), ",", "." ?></td>
 
                                  <td><?php if ($row['status_transaksi'] == 0) { ?>
                                          <span class="btn btn-warning">Menunggu Di Proses</span>
@@ -60,7 +60,7 @@
                                          <span class="">Cancel</span>
                                         </button>
                                      <?php } else if ($row['status_transaksi'] == 1) { ?>
-                                         <button onClick="bukti_pembayaran('<?= base_url() ?>transaksi/proses_bayar','Rp <?= number_format($row['total_harga']), 0, ",", "." ?>','<?= $row['foto'] ?>','<?= $row['id_transaksi'] ?>')" data-toggle="modal" data-target="#modalbayar" type="button" class="btn btn-success btn-rounded btn-icon">
+                                         <button onClick="bukti_pembayaran('<?= base_url() ?>transaksi/proses_bayar','Rp <?= number_format($row['total_harga']), ",", "." ?>','<?= $row['foto'] ?>','<?= $row['id_transaksi'] ?>')" data-toggle="modal" data-target="#modalbayar" type="button" class="btn btn-success btn-rounded btn-icon">
                                              <i class="mdi mdi-home-outline">Bayar</i>
                                          </button>
                                      <?php } ?>

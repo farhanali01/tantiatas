@@ -80,16 +80,7 @@
                                 </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID Kriteria</th>
-                                        <th>Nama Kriteria</th>
-                                        <th>Bobot</th>
-                                        <th>Type</th>
-                                        <th>Action</th>
-
-                                    </tr>
-                                </tfoot>
+                              
                             </table>
                         </div>
                     </div>

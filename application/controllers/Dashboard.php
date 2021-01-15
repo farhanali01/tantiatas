@@ -22,10 +22,11 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        $date = date('m');
         $data_pesanan = $this->ModelTransaksi->getAllDataPemesanan();
         $data_produk = $this->ModelProduk->getData();
         $data_pelanggan = $this->ModelUsers->getDataAllUsers();
-        $data_pendapatan = $this->ModelTransaksi->getDataPendapata(3);
+        $data_pendapatan = $this->ModelTransaksi->getDataPendapatan(3,$date);
         $data = array(
             "title" => "Dashboard Toko",
             'jumlah_produk' => count($data_produk),
@@ -173,7 +174,7 @@ class Dashboard extends CI_Controller
         $date = $tahun.'-'.$bulan;
 
         $data = array(
-            'bulan' => $this->_getMonth($bulan),
+            'bulan' => $this->_getMonth($bulan)." " .$tahun,
             "title" => 'Laporan',
             'date'  => $date,
             "laporan" => $this->ModelTransaksi->getDataLaporan($bulan,$tahun)

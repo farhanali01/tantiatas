@@ -97,6 +97,16 @@
 							<input value="<?= $row['hp']?>" type="text" name="hp" class="form-control" id="hp">
 							
 						</div>
+						<div class="form-group">
+							<label for="kota">Kota*</label>
+							<input value="<?= $row['kota']?>" type="text" name="kota" class="form-control" id="kota">
+							
+						</div>
+						<div class="form-group">
+							<label for="kode_pos">Kode Pos*</label>
+							<input value="<?= $row['kode_pos']?>" type="text" name="kode_pos" class="form-control" id="kode_pos">
+							
+						</div>
 						
 						<button class="btn vizew-btn mt-30" type="submit">Update Profile</button>
 					</form>

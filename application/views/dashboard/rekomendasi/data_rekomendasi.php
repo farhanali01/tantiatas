@@ -75,17 +75,7 @@
                                 </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Produk</th>
-                                        <th>Nilai Harga</th>
-                                        <th>Nilai Bahan</th>
-                                        <th>Nilai Berat</th>
-                                        <th>Total Nilai</th>
-
-                                    </tr>
-                                </tfoot>
+                               
                             </table>
                         </div>
                     </div>

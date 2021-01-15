@@ -26,9 +26,11 @@ class Profile extends CI_Controller
       $alamat = $this->input->post('alamat');
       $hp = $this->input->post('hp');
       $email = $this->input->post('email');
+      $kota = $this->input->post('kota');
+      $kode_pos = $this->input->post('kode_pos');
       $cekFoto = $_FILES['foto']['name'];
 
-      if ($username != null && $fullname != null && $alamat != null && $hp != null && $email != null) {
+      if ($username != null && $fullname != null && $alamat != null && $hp != null && $email != null && $kota != null && $kode_pos != null) {
          if ($cekFoto != null) {
             $config['upload_path']          = './assets/foto_users/';
             $config['allowed_types']        = 'gif|jpg|png';
@@ -50,12 +52,16 @@ class Profile extends CI_Controller
             'fullname' => $fullname,
             'email'     => $email,
             
+            
 
          );
          $detail = array(
             'foto'   => $namaFoto,
             'hp'     => $hp,
-            'alamat' => $alamat
+            'alamat' => $alamat,
+            'kota' => $kota,
+            'kode_pos' => $kode_pos
+            
          );
          $this->ModelUsers->updateData($detail, $id_users);
          $this->ModelUsers->updateProfile($profile, $id_users);

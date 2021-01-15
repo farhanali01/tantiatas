@@ -22,7 +22,7 @@
 	<!--================Order Details Area =================-->
 	<section class="order_details section_gap">
 		<div class="container">
-			<h3 class="title_confirmation">Terima Kasih Telah Bertransaksi Di Toko Kami.</h3>
+			<h3 class="title_confirmation">Terima Kasih Telah Bertransaksi Di Toko Kami, Silahkan Tunggu Konfirmasi Selanjutnya.</h3>
 			<div class="row order_d_inner">
 				<div class="col-lg-8">
 					<div class="details_item">
@@ -70,7 +70,7 @@
 									<p>Rp <?= number_format($row['harga']),",","." ?></p>
 								</td>
 							</tr>
-							<?php $total = $row['harga']*$row['qty']?>
+							<?php $total += $row['harga']*$row['qty']?>
 							<?php }?>
 							<tr>
 								<td>
@@ -80,23 +80,13 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>Rp. <?=number_format($total), ",", "." ?></p>
+									<p>Rp <?=number_format($total), ",", "." ?></p>
 								</td>
 							</tr>
 							
 							
 							
-							<tr>
-								<td>
-									<h4>Total</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p>Rp. <?=number_format($total), ',', '.' ?></p>
-								</td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>

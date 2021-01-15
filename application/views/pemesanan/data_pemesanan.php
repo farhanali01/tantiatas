@@ -34,7 +34,7 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered first">
                                 <?php if ($this->session->flashdata('pesan')) { ?>
-                                    <p style="display: none;" id="pesan"><?= $this->session->flashdata('pesan') ?>; </p>
+                                    <p style="display: none;" id="pesan"><?= $this->session->flashdata('pesan') ?> </p>
                                     <p style="display: none;" id="type"><?= $this->session->flashdata('type') ?></p>
                                     <p style="display: none;" id="title"><?= $this->session->flashdata('title') ?></p>
                                 <?php } ?>
@@ -44,7 +44,6 @@
                                         <th>ID Transaksi</th>
                                         <th>Nama Pemesan</th>
                                         <th>Tanggal Pesanan</th>
-                                        <th>Harga</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -56,8 +55,7 @@
                                             <td><?= $i++ ?> </td>
                                             <td><?= $row['id_transaksi'] ?></td>
                                             <td><?= $row['fullname'] ?></td>
-                                            <td><?= $row['tanggal'] ?></td>
-                                            <td>Rp <?= number_format($row['harga']), ",", "." ?></td>
+                                            <td><?= date_format(date_create($row['tanggal_transaksi']),"d F Y") ?></td>
                                             <td><span class="btn btn-warning">Menunggu Di Proses</span></td>
 
                                             <td>
@@ -90,17 +88,7 @@
                                 </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>ID Transaksi</th>
-                                        <th>Nama Pemesan</th>
-                                        <th>Tanggal Pesanan</th>
-                                        <th>Harga</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
+                                
                             </table>
                         </div>
                     </div>

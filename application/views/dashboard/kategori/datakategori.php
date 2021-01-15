@@ -78,13 +78,7 @@
                       </tr>
 
                       </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>ID Kategori</th>
-                          <th>Nama Kategori</th>
-                          <th>Action</th>
-                        </tr>
-                      </tfoot>
+                    
                     </table>
                   </div>
                 </div>

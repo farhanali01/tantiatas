@@ -34,7 +34,7 @@
                                     <h1 class="mb-1"><?= $jumlah_produk ?></h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                    <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                                   
                                 </div>
                             </div>
                             <div id="sparkline-revenue"></div>
@@ -48,7 +48,7 @@
                                     <h1 class="mb-1"><?= $jumlah_pesanan?></h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                    <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                                   
                                 </div>
                             </div>
                             <div id="sparkline-revenue2"></div>
@@ -62,7 +62,7 @@
                                     <h1 class="mb-1"><?= $jumlah_pelanggan?></h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
-                                    <span>N/A</span>
+                                   
                                 </div>
                             </div>
                             <div id="sparkline-revenue3"></div>

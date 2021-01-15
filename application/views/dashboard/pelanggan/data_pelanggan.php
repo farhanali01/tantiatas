@@ -71,17 +71,7 @@
                                 </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Username</th>
-                                        <th>Fullname</th>
-                                        <th>Email</th>
-                                        <th>No Telepon</th>
-                                        <th>Alamat</th>
-
-                                    </tr>
-                                </tfoot>
+                                
                             </table>
                         </div>
                     </div>

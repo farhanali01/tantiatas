@@ -27,7 +27,7 @@ class Transaksi extends CI_Controller
 
         $id_transaksi = $this->input->post('id_transaksi');
         $config['upload_path']          = './assets/image_produk/';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $this->upload->initialize($config);
         if ($this->upload->do_upload('foto')) {
             $data_file = array('upload_data' => $this->upload->data());

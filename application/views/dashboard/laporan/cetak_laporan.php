@@ -30,9 +30,9 @@
                     <td><?= $i++ ?></td>
                     <td><?= $row['fullname'] ?></td>
                     <td><?= $row['nama_produk'] ?></td>
-                    <td><?= $row['tanggal'] ?></td>
+                    <td><?= date_format(date_create($row['tanggal_transaksi']),"d F Y") ?></td>
                     <td><?= $row['alamat'] ?></td>
-                    <td><?= $row['total_harga'] ?></td>
+                    <td>Rp <?= number_format($row['total_harga'],0,".",".") ?></td>
 
                 </tr>
             <?php } ?>

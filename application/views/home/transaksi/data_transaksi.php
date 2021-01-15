@@ -39,7 +39,6 @@
                                         <th>ID Transaksi</th>
                                         <th>Nama Pemesan</th>
                                         <th>Tanggal Pesanan</th>
-                                        <th>Harga</th>
                                         <th>Foto Bukti</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -52,8 +51,8 @@
                                             <td><?= $i++ ?> </td>
                                             <td><?= $row['id_transaksi'] ?></td>
                                             <td><?= $row['fullname'] ?></td>
-                                            <td><?= $row['tanggal'] ?></td>
-                                            <td>Rp <?= number_format($row['harga']), ",", "." ?></td>
+                                            <td><?= date_format(date_create($row['tanggal_transaksi']),"d F Y") ?></td>
+                                            
                                             <td>
                                                 <?php if ($row['foto_bukti'] != null) { ?>
                                                     <a href="<?= base_url() ?>assets/image_produk/<?= $row['foto_bukti'] ?>" target="_blank"><img style="height: 50px; width: 50px;" src="<?= base_url() ?>assets/image_produk/<?= $row['foto_bukti'] ?>" alt=""></a>
@@ -107,18 +106,7 @@
                                 </tr>
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>ID Transaksi</th>
-                                        <th>Nama Pemesan</th>
-                                        <th>Tanggal Pesanan</th>
-                                        <th>Harga</th>
-                                        <th>Foto Bukti</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
+                               
                             </table>
                         </div>
                     </div>
