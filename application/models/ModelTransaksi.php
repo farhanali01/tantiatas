@@ -113,6 +113,18 @@ class ModelTransaksi extends CI_Model
         return $this->db->query($sql,array($bulan,$tahun))->result_array();
     }
 
+    public function getDataLaporanPerTahun($perTahun){
+        $sql = "SELECT * FROM tbl_transaksi,tbl_card,tbl_users,tbl_produk,tbl_detail_user WHERE
+                tbl_transaksi.id_card = tbl_card.id_card AND
+                tbl_card.id_users = tbl_users.id_users AND
+                tbl_card.id_produk = tbl_produk.id_produk AND
+                tbl_detail_user.id_users = tbl_users.id_users AND
+                YEAR(tbl_transaksi.tanggal_transaksi) = ?
+                ";
+
+        return $this->db->query($sql,array($perTahun))->result_array();
+    }
+
     public function getDataPendapatan($status,$date)
     {
         $sql = "SELECT DISTINCT(id_transaksi), SUM(total_harga)as total FROM tbl_transaksi 

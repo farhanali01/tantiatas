@@ -77,6 +77,17 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+<script>
+$("#year").datepicker( {
+    format: "yyyy",
+    viewMode: "years", 
+    minViewMode: "years"
+}).on('changeDate', function(e){
+    $(this).datepicker('hide');
+});
+</script>
+
 </body>
 
 </html>

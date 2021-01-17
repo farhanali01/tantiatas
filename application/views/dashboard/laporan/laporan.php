@@ -29,11 +29,20 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-6">
+                            <?php if($active_cetak == "bulan"){ ?>
                             <h5 class="card-header">Laporan Penjualan Bulan <?= $bulan ?></h5>
+                            <?php }else{ ?>
+                            <h5 class="card-header">Laporan Penjualan Tahun <?= $bulan ?></h5>
+                            <?php } ?>
                         </div>
                         <div class="col-6">
+                            <button data-toggle="modal" data-target="#modalTahun" style="float: right;position:relative;right:20px;top:15px;margin-left:10px;" class="btn btn-outline-danger">Pilih Tahun</button>
                             <button data-toggle="modal" data-target="#modalCetak" style="float: right;position:relative;right:20px;top:15px;" class="btn btn-outline-info">Pilih Bulan</button>
-                            <a href="<?= base_url() ?>transaksi/cetak_laporan/<?= $date ?>" target="_blank" style="float: right;position:relative;right:20px;top:15px;margin-right:20px;" class="btn btn-outline-success"><i class="fa fa-print"></i> Cetak</a>
+                            <?php if ($active_cetak == "bulan") {  ?>
+                                <a href="<?= base_url() ?>transaksi/cetak_laporan/<?= $date ?>/bulan" target="_blank" style="float: right;position:relative;right:20px;top:15px;margin-right:20px;" class="btn btn-outline-success"><i class="fa fa-print"></i> Cetak</a>
+                            <?php } else { ?>
+                                <a href="<?= base_url() ?>transaksi/cetak_laporan/<?= $bulan ?>/tahun" target="_blank" style="float: right;position:relative;right:20px;top:15px;margin-right:20px;" class="btn btn-outline-success"><i class="fa fa-print"></i> Cetak</a>
+                            <?php } ?>
                         </div>
                     </div>
                     <?php if ($this->session->flashdata('pesan')) { ?>
@@ -63,9 +72,9 @@
                                         <td><?= $i++ ?></td>
                                         <td><?= $row['fullname'] ?></td>
                                         <td><?= $row['nama_produk'] ?></td>
-                                        <td><?= date_format(date_create($row['tanggal_transaksi']),"d F Y") ?></td>
+                                        <td><?= date_format(date_create($row['tanggal_transaksi']), "d F Y") ?></td>
                                         <td><?= $row['alamat'] ?></td>
-                                        <td>Rp <?= number_format($row['total_harga'],0,".",".") ?></td>
+                                        <td>Rp <?= number_format($row['total_harga'], 0, ".", ".") ?></td>
 
                                     </tr>
                                 <?php } ?>
@@ -105,6 +114,35 @@
                     <div class="form-group">
                         <label form="">Pilih Bulan</label>
                         <input type="month" name="bulan" id="bulan" class="form-control">
+                    </div>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalTahun" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal_title">Pilih Tahun</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url() ?>dashboard/laporan" id="form" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label form="">Pilih Tahun</label>
+                        <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control" name="tahun" id="year">
                     </div>
             </div>
 

@@ -167,17 +167,32 @@ class Dashboard extends CI_Controller
             $arrayDate = explode("-",$date);
             $bulan = $arrayDate[1];
             $tahun = $arrayDate[0];
+            $active_cetak = "bulan";
+            $laporan = $this->ModelTransaksi->getDataLaporan($bulan,$tahun);
+            $badge = $this->_getMonth($bulan)." " .$tahun;
         }else{
             $bulan = date('m');
             $tahun = date('Y');
+            $active_cetak = "bulan";
+            $laporan = $this->ModelTransaksi->getDataLaporan($bulan,$tahun);
+            $badge = $this->_getMonth($bulan)." " .$tahun;
+        }
+
+        if(isset($_POST['tahun'])){
+            $perTahun = $this->input->post('tahun');
+            $active_cetak = "tahun";
+            $laporan = $this->ModelTransaksi->getDataLaporanPerTahun($perTahun);
+            $badge = $perTahun;
         }
         $date = $tahun.'-'.$bulan;
 
         $data = array(
-            'bulan' => $this->_getMonth($bulan)." " .$tahun,
+            'bulan' => $badge,
             "title" => 'Laporan',
             'date'  => $date,
-            "laporan" => $this->ModelTransaksi->getDataLaporan($bulan,$tahun)
+            "laporan"       => $laporan,
+            "active_cetak"  => $active_cetak,
+            
         );
         $this->load->view('dashboard/header', $data);
         $this->load->view('dashboard/navbar');

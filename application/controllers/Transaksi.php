@@ -125,44 +125,56 @@ class Transaksi extends CI_Controller
 
     public function cetak_laporan()
     {
-
+        $active_cetak = $this->uri->segment(4);
         $date = $this->uri->segment(3);
-        $arrayDate = explode("-", $date);
-        $bulan = $arrayDate[1];
-        $tahun = $arrayDate[0];
 
+
+        if ($active_cetak == "bulan") {
+            $arrayDate = explode("-", $date);
+            $bulan = $arrayDate[1];
+            $tahun = $arrayDate[0];
+            $laporan = $this->ModelTransaksi->getDataLaporan($bulan, $tahun);
+            $title = $this->_getMonth($bulan).' '.$tahun;
+            $activeTitle = "bulan";
+        } else {
+            $date = $this->uri->segment(3);
+            $laporan = $this->ModelTransaksi->getDataLaporanPerTahun($date);
+            $title = $date;
+            $activeTitle = "tahun";
+        }
         $data = array(
-            'bulan'     => $this->_getMonth($bulan),
-            'laporan'   => $this->ModelTransaksi->getDataLaporan($bulan,$tahun)
+            'bulan'     => $title,
+            'laporan'   => $laporan,
+            'active_title'=> $activeTitle
         );
 
-        $this->load->view('dashboard/laporan/cetak_laporan',$data);
-
+        $this->load->view('dashboard/laporan/cetak_laporan', $data);
     }
-    public function _getMonth($bulan){
-        if($bulan == 1){
+    public function _getMonth($bulan)
+    {
+        if ($bulan == 1) {
             $month = "Januari";
-        }else if($bulan == 2){
+        } else if ($bulan == 2) {
             $month = "Februari";
-        }else if($bulan == 3){
+        } else if ($bulan == 3) {
             $month = "Maret";
-        }else if($bulan == 4){
+        } else if ($bulan == 4) {
             $month = "April";
-        }else if($bulan == 5){
+        } else if ($bulan == 5) {
             $month = "Mei";
-        }else if($bulan == 6){
+        } else if ($bulan == 6) {
             $month = "Juni";
-        }else if($bulan == 7){
+        } else if ($bulan == 7) {
             $month = "Juli";
-        }else if($bulan == 8){
+        } else if ($bulan == 8) {
             $month = "Agustus";
-        }else if($bulan == 9){
+        } else if ($bulan == 9) {
             $month = "September";
-        }else if($bulan == 10){
+        } else if ($bulan == 10) {
             $month = "Oktober";
-        }else if($bulan == 11){
+        } else if ($bulan == 11) {
             $month = "November";
-        }else if($bulan == 12){
+        } else if ($bulan == 12) {
             $month = "Desember";
         }
         return $month;

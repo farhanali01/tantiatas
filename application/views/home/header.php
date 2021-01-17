@@ -32,6 +32,7 @@
 	<link rel="stylesheet" href="<?= base_url() ?>assets/home/css/main.css">
 	<link rel="stylesheet" href="<?= base_url() ?>assets/home/css/style.css">
 	<link rel="stylesheet" href="<?= base_url() ?>assets/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>

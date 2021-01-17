@@ -15,5 +15,6 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/admin/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
     <title>Admin Dashboard</title>
 </head>
